@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | NEWSBD</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- ========================================================= TOP HEADER ========================================================= -->
+  <header class="top-header py-2">
+    <div class="container d-flex justify-content-between align-items-center flex-wrap">
+      <div class="contact-info">
+        <span class="live-time"><i class="bi bi-clock"></i> <span id="liveTime">Loading time...</span></span>
+        <span><i class="bi bi-envelope"></i> rupom45@news.com</span>
+        <span><i class="bi bi-telephone"></i> +08801998-572019</span>
+      </div>
+      <div class="social">
+        <a href="#"><i class="bi bi-facebook"></i></a><a href="#"><i class="bi bi-twitter-x"></i></a>
+        <a href="#"><i class="bi bi-youtube"></i></a><a href="#"><i class="bi bi-linkedin"></i></a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================= NAVBAR - BOOTSTRAP ========================================================= -->
+  <nav class="navbar navbar-expand-lg main-navbar sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">NEWS<span class="brand-red">BD</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"><span
+          class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="category.html">Category</a></li>
+          <li class="nav-item"><a class="nav-link" href="author.html">Author</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========================================================= BREADCRUMB SECTION ========================================================= -->
+  <div class="breadcrumb-area">
+    <div class="container">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+        <li class="breadcrumb-item active">Login</li>
+      </ol>
+    </div>
+  </div>
+  <!-- ========================================================= LOGIN FORM SECTION ========================================================= -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-6">
+          <div class="card form-card p-4">
+            <h2 class="section-title">Login</h2>
+            <form>
+              <div class="mb-3"><label class="form-label">Name</label><input class="form-control"
+                  placeholder="Enter your name"></div>
+              <div class="mb-3"><label class="form-label">Email</label><input type="email" class="form-control"
+                  placeholder="Enter your email"></div>
+              <div class="mb-3"><label class="form-label">Number</label><input class="form-control"
+                  placeholder="Enter your number"></div>
+              <div class="mb-3"><label class="form-label">Message</label><textarea class="form-control" rows="5"
+                  placeholder="Enter your message"></textarea></div>
+              <button type="button" class="btn btn-news w-100 py-2">Login</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================= BIG FOOTER ========================================================= -->
+  <footer class="site-footer pt-5 pb-3 mt-5">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <h5>NEWSBD</h5>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+        </div>
+        <div class="col-lg-2 col-6">
+          <h6>Quick Links</h6><a href="index.html">Home</a><br><a href="about.html">About</a><br><a
+            href="category.html">Category</a><br><a href="author.html">Authors</a><br><a href="contact.html">Contact</a>
+        </div>
+        <div class="col-lg-3 col-6">
+          <h6>Categories</h6>
+          <p>National<br>Education<br>Business<br>Technology<br>Sports</p>
+        </div>
+        <div class="col-lg-3">
+          <h6>Contact</h6>
+          <p>rupom45@news.com<br>+08801998-572019<br>Farmgate, Dhaka, Bangladesh</p>
+        </div>
+      </div>
+      <div class="footer-bottom text-center pt-3 mt-4"><small>© 2026 NEWSBD. All Rights Reserved.</small></div>
+    </div>
+  </footer>
+
+  <!-- ========================================================= JAVASCRIPT - LIVE TIME ONLY ========================================================= -->
+  <script>
+    function updateLiveTime() {
+      const now = new Date();
+      const timeText = now.toLocaleTimeString('en-BD', {
+        hour: '2-digit', minute: '2-digit', second: '2-digit',
+        hour12: true, timeZone: 'Asia/Dhaka'
+      });
+      const dateText = now.toLocaleDateString('en-BD', {
+        weekday: 'short', day: '2-digit', month: 'short', year: 'numeric',
+        timeZone: 'Asia/Dhaka'
+      });
+      const clock = document.getElementById('liveTime');
+      if (clock) clock.textContent = dateText + ' | ' + timeText;
+    }
+    updateLiveTime();
+    setInterval(updateLiveTime, 1000);
+  </script>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
